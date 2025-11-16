@@ -92,6 +92,17 @@ window.removeFromCart = function(productId) {
     renderCart();
 };
 
+window.showImageModal = function(imageUrl, imageTitle) {
+    const imageModal = new bootstrap.Modal(document.getElementById('imageModal'));
+    const modalImage = document.getElementById('modalImage');
+    const modalTitle = document.getElementById('imageModalLabel');
+
+    modalImage.src = imageUrl;
+    modalTitle.textContent = imageTitle;
+
+    imageModal.show();
+}
+
 document.addEventListener('DOMContentLoaded', () => {
     const productContainer = document.getElementById('product-container');
     const cartModal = document.getElementById('cartModal');
@@ -115,7 +126,7 @@ document.addEventListener('DOMContentLoaded', () => {
             const productCard = `
                 <div class="col-md-4 col-lg-3">
                     <div class="card h-100 shadow-sm">
-                        <img src="${product.image}" class="card-img-top p-3" alt="${product.title}" style="height: 200px; object-fit: contain;">
+                        <img src="${product.image}" class="card-img-top p-3" alt="${product.title}" style="height: 200px; object-fit: contain;" onclick="showImageModal('${product.image}', '${product.title}')">
                         <div class="card-body d-flex flex-column">
                             <h5 class="card-title" style="font-size: 1rem;">${product.title}</h5>
                             <p class="card-text fw-bold mt-2">$${product.price.toFixed(2)}</p>
