@@ -169,6 +169,7 @@ article:hover {
 }
 
 article img {
+    cursor: pointer;
     width: 100%;
     height: auto;
     max-height: 200px;
