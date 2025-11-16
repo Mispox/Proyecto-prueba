@@ -107,7 +107,9 @@ document.addEventListener('DOMContentLoaded', () => {
     const productContainer = document.getElementById('product-container');
     const cartModal = document.getElementById('cartModal');
 
-    cartModal.addEventListener('show.bs.modal', renderCart);
+    if (cartModal) {
+        cartModal.addEventListener('show.bs.modal', renderCart);
+    }
 
     async function fetchProducts() {
         try {
@@ -139,6 +141,9 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    fetchProducts();
+    if (productContainer) {
+        fetchProducts();
+    }
+
     updateCartCount();
 });

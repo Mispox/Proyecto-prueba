@@ -28,6 +28,11 @@
             <ul class="nav">
                 <li class="nav-item"><a class="nav-link" href="../index.html">Inicio</a></li>
                 <li class="nav-item"><a class="nav-link" href="./contacto.html">Contacto</a></li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#" data-bs-toggle="modal" data-bs-target="#cartModal">
+                        Carrito <span id="cart-count" class="badge bg-secondary">0</span>
+                    </a>
+                </li>
             </ul>
         </nav>
     </header> 
@@ -86,6 +91,26 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <!-- formulario de contacto -->
     <script src="../js/contact.js" defer></script>
+    <script src="../js/script.js" defer></script>
+
+    <!-- Carrito -->
+    <div class="modal fade" id="cartModal" tabindex="-1" aria-labelledby="cartModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="cartModalLabel">Carrito de Compras</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body" id="cart-body">
+                </div>
+                <div class="modal-footer">
+                    <p class="me-auto">Total: <span id="cart-total">$0.00</span></p>
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                    <button type="button" class="btn btn-accent">Finalizar Compra</button>
+                </div>
+            </div>
+        </div>
+    </div>
 </body>
 </html>
 
