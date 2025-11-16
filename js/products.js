@@ -7,7 +7,7 @@
   },
   {
     "id": 2,
-    "title": "Naruto, Vol. 2",
+    "title": "One Piece, Vol. 2",
     "price": 8900,
     "image": "img/onepiece02.jpg"
   },
