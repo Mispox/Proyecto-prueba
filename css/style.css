@@ -1,0 +1,447 @@
+/* -------------------- */
+/* 1. Base y Reset */
+/* -------------------- */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    /* Paleta de colores */
+    --color-degrade-start: #667eea;
+    --color-degrade-end: #764ba2;
+    --color-accent: #4a148c;
+    --color-background: #ffffff; 
+    --color-text: #333333;
+    --color-manga-border: #dddddd;
+    --color-price: #555555;
+
+    /* Fuente */
+    --font-family-ui: 'Roboto', sans-serif;
+}
+
+body {
+    font-family: var(--font-family-ui);
+    line-height: 1.6;
+    background-color: var(--color-background);
+    color: var(--color-text);
+    font-weight: 400;
+}
+
+a {
+    text-decoration: none;
+    color: var(--color-text);
+    transition: color 0.3s;
+}
+
+/* Contenedor principal para centrar el contenido */
+main {
+    max-width: 1200px;
+    margin: 20px auto;
+    padding: 0 2rem;
+}
+
+/* -------------------- */
+/* 2. Header (Navegación y Auth) */
+/* -------------------- */
+
+header {
+    background: linear-gradient(135deg, var(--color-degrade-start) 0%, var(--color-degrade-end) 100%);
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.logo img {
+    height: 50px; 
+    object-fit: contain;
+}
+
+header .main-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+#welcome-message {
+    color: white;
+    font-weight: 400;
+    font-size: 1rem;
+    padding: 0.5rem 0;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 2rem;
+    padding: 0;
+}
+
+nav a {
+    color: white; 
+    font-weight: 400; 
+    font-size: 1rem;
+    padding: 0.5rem 0;
+    position: relative;
+}
+
+nav a:hover {
+    color: white;
+}
+
+nav a::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: white;
+    transition: width 0.3s ease;
+}
+
+nav a:hover::after {
+    width: 100%;
+}
+
+.nav-link {
+    color: white !important;
+}
+
+/* -------------------- */
+/* Main Content y Títulos */
+/* -------------------- */
+
+h1 {
+    font-size: 2.2rem;
+    text-align: center;
+    color: var(--color-accent);
+    margin-top: 40px;
+    margin-bottom: 20px;
+    font-weight: 500;
+}
+
+main > p {
+    max-width: 800px;
+    margin: 0 auto 40px auto;
+    text-align: center;
+    font-size: 1rem;
+    color: #666;
+}
+
+h2 {
+    font-size: 1.5rem;
+    text-align: center;
+    color: var(--color-accent);
+    margin-bottom: 30px;
+    font-weight: 500;
+}
+
+/* -------------------- */
+/*  Grid de Productos   */
+/* -------------------- */
+
+section div {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+}
+
+article {
+    background-color: #ffffff;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+article:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+
+article img {
+    width: 100%;
+    height: auto;
+    max-height: 200px;
+    object-fit: contain;
+    margin-bottom: 15px;
+    border-radius: 4px;
+}
+
+article h3 {
+    font-size: 1.2rem;
+    margin-top: 5px;
+    color: var(--color-text);
+    font-weight: 500;
+}
+
+article p {
+    color: var(--color-price);
+    font-weight: 400;
+    margin: 8px 0 15px 0;
+    font-size: 1rem;
+}
+
+article button {
+    background-color: var(--color-accent);
+    color: white;
+    border: none;
+    padding: 12px 24px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: 500;
+    transition: background-color 0.3s;
+}
+
+article button:hover {
+    background-color: #5d359b;
+}
+
+/* -------------------- */
+/*    Footer            */
+/* -------------------- */
+
+footer {
+    background-color: var(--color-degrade-end);
+    color: white;
+    padding: 20px 2rem;
+    margin-top: 50px;
+    text-align: center;
+    border-top: 5px solid var(--color-degrade-start);
+}
+
+footer p {
+    margin-bottom: 10px;
+    font-size: 0.9rem;
+    font-weight: 300;
+}
+
+footer nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    padding-top: 5px;
+}
+
+footer nav li {
+    font-size: 0.9rem;
+    opacity: 0.8;
+    transition: opacity 0.3s;
+    cursor: pointer;
+    font-weight: 300;
+}
+
+footer nav li:hover {
+    opacity: 1;
+    color: var(--color-degrade-start);
+}
+
+/* -------------------- */
+/*  Media Queries (Responsivo) */
+/* -------------------- */
+
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        gap: 15px;
+        text-align: center;
+    }
+    
+    header .main-nav {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    header .auth-links {
+        justify-content: center;
+    }
+    
+    nav ul {
+        gap: 1.5rem;
+        justify-content: center;
+    }
+    
+    main {
+        padding: 0 1rem;
+    }
+}
+
+@media (max-width: 576px) {
+    section div {
+        grid-template-columns: 1fr; 
+    }
+    article img {
+        height: 250px; 
+    }
+}
+
+/* -------------------- */
+/* 7. Auth Forms */
+/* -------------------- */
+
+.auth-container {
+    max-width: 400px;
+    margin: 50px auto;
+    padding: 30px;
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    text-align: left;
+}
+
+.auth-form h2 {
+    text-align: center;
+    margin-bottom: 25px;
+    color: var(--color-accent);
+}
+
+.auth-form div {
+    margin-bottom: 15px;
+}
+
+.auth-form label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: 500;
+    color: #555;
+}
+
+.auth-form input[type="text"],
+.auth-form input[type="email"],
+.auth-form input[type="password"],
+.auth-form input[type="tel"] {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    background-color: #f7f9fc;
+    transition: border-color 0.3s;
+}
+
+.auth-form input[type="text"]:focus,
+.auth-form input[type="email"]:focus,
+.auth-form input[type="password"]:focus,
+.auth-form input[type="tel"]:focus {
+    border-color: var(--color-degrade-start);
+    outline: none;
+}
+
+.auth-form button {
+    width: 100%;
+    padding: 12px;
+    background-color: var(--color-accent);
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: 500;
+    transition: background-color 0.3s;
+}
+
+.auth-form button:hover {
+    background-color: #5d359b;
+}
+
+.auth-form #error-message {
+    color: #d9534f;
+    margin-top: 10px;
+    text-align: center;
+}
+/* Contact Form Styles */
+.contact-form {
+    max-width: 600px;
+    margin: 50px auto;
+    padding: 40px;
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.contact-form h2 {
+    margin-bottom: 30px;
+    font-size: 1.8rem;
+    font-weight: 500;
+    color: #333;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.contact-form label {
+    display: block;
+    margin-bottom: 0; 
+    font-weight: 500;
+    color: #555;
+}
+
+.contact-form input[type="text"],
+.contact-form input[type="email"],
+.contact-form input[type="tel"],
+.contact-form textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    background-color: #fff;
+    transition: border-color 0.3s;
+    font-size: 1rem;
+}
+
+.contact-form input[type="text"]:focus,
+.contact-form input[type="email"]:focus,
+.contact-form input[type="tel"]:focus,
+.contact-form textarea:focus {
+    border-color: var(--color-degrade-start);
+    outline: none;
+}
+
+.contact-form textarea {
+    height: 150px;
+    resize: vertical;
+}
+
+.contact-form .g-recaptcha {
+    margin-bottom: 20px;
+}
+
+.contact-form button {
+    background-color: var(--color-accent);
+    color: white;
+    padding: 12px 24px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: 500;
+    transition: background-color 0.3s;
+}
+
+.contact-form button:hover {
+    background-color: #343a40;
+}
+
+
+.btn-accent {
+    background-color: var(--color-accent);
+    color: white;
+    border: none;
+}
+
+.btn-accent:hover {
+    background-color: #5d359b; 
+    color: white;
+}
+
